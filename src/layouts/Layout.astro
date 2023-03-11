@@ -1,10 +1,11 @@
 ---
-import "../styles/global.scss";
+import theme from "../styles/theme.js";
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const { white, background } = theme.colors;
 ---
 
 <!DOCTYPE html>
@@ -20,3 +21,23 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+
+<style is:global define:vars={{ white, background }}>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      var(--white) 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: var(--background);
+  }
+  code {
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+</style>
