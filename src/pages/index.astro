@@ -1,7 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import JCard from "../components/JCard";
 import IncrementButton from "../components/IncrementButton";
+
+import theme from "../styles/theme";
+
+const { space16, space24 } = theme.space;
+const { fontsize40 } = theme.fontSizes;
+const { bold } = theme.fontWeights;
+const { medium } = theme.screenSizes;
 ---
 
 <Layout title="Welcome to Astro my duder">
@@ -14,19 +22,25 @@ import IncrementButton from "../components/IncrementButton";
         title="Repo"
         body="Check out the repo for this project"
       />
+      <JCard
+        client:load
+        href="https://github.com/joel-thompson/astro-fun"
+        title="Repo2"
+        body="Check out the repo for this project"
+      />
     </ul>
   </main>
 </Layout>
 
-<style>
+<style define:vars={{ space16, space24, fontsize40, bold, medium }}>
   main {
     margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
+    padding: var(--space24);
+    max-width: var(--medium);
   }
   h1 {
-    font-size: 3rem;
-    font-weight: 800;
+    font-size: var(--fontsize40);
+    font-weight: var(--bold);
     margin: 0;
   }
   .text-gradient {
@@ -39,7 +53,7 @@ import IncrementButton from "../components/IncrementButton";
   .link-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
+    gap: var(--space16);
     padding: 0;
   }
 </style>

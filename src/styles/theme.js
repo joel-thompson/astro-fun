@@ -80,9 +80,10 @@ const theme = {
     fontsize24: "1.5rem",
     fontsize28: "1.75rem",
     fontsize32: "2rem",
+    fontsize40: "3rem",
   },
   fontWeights: {
-    bold: 700,
+    bold: 800,
     medium: 500,
     regular: 400,
   },
@@ -145,7 +146,7 @@ const theme = {
   //   badgeSmall: "0.01em",
   //   badgeDefault: "0.025em",
   // },
-  mediaQueries: {
+  screenSizes: {
     small: "480px",
     medium: "768px",
     large: "1200px",
