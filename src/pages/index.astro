@@ -1,38 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-import JCard from "../components/JCard";
-import IncrementButton from "../components/IncrementButton";
+import IncrementButton from "../components/examples/IncrementButton";
 
 import { space, fontSizes, fontWeights, screenSizes } from "../theme";
-
-const { space16, space24 } = space;
-const { fontsize40 } = fontSizes;
-const { bold } = fontWeights;
-const { medium } = screenSizes;
 ---
 
 <Layout title="Welcome to Astro my duder">
   <main>
     <h1>Welcome to <span class="text-gradient">Astro</span> my guy</h1>
     <IncrementButton client:load />
-    <ul role="list" class="link-card-grid">
-      <Card
-        href="https://github.com/joel-thompson/astro-fun"
-        title="Repo"
-        body="Check out the repo for this project"
-      />
-      <JCard
-        client:load
-        href="https://github.com/joel-thompson/astro-fun"
-        title="Repo2"
-        body="Check out the repo for this project"
-      />
-    </ul>
   </main>
 </Layout>
 
-<style define:vars={{ space16, space24, fontsize40, bold, medium }}>
+<style
+  define:vars={{
+    space16: space.space16,
+    space24: space.space24,
+    fontsize40: fontSizes.fontsize40,
+    bold: fontWeights.bold,
+    medium: screenSizes.medium,
+  }}
+>
   main {
     margin: auto;
     padding: var(--space24);
@@ -49,11 +37,5 @@ const { medium } = screenSizes;
     -webkit-text-fill-color: transparent;
     background-size: 400%;
     background-position: 0%;
-  }
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: var(--space16);
-    padding: 0;
   }
 </style>

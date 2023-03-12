@@ -7,8 +7,7 @@ export interface Props {
 
 const { href, title, body } = Astro.props;
 
-import { colors } from "../theme";
-const { white } = colors;
+import { colors } from "../../theme";
 ---
 
 <li class="link-card">
@@ -23,7 +22,7 @@ const { white } = colors;
   </a>
 </li>
 
-<style define:vars={{ white }}>
+<style define:vars={{ white: colors.white }}>
   .link-card {
     list-style: none;
     display: flex;
@@ -45,7 +44,7 @@ const { white } = colors;
     padding: 1rem 1.3rem;
     border-radius: 0.35rem;
     color: #111;
-    background-color: white;
+    background-color: var(--white);
     opacity: 0.8;
   }
   h2 {

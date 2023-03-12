@@ -3,9 +3,14 @@ import { useState } from "react";
 const IncrementButton = () => {
   const [num, setNum] = useState(0);
 
+  const style = {
+    color: "red",
+  };
+
   return (
     <>
       <button
+        style={style}
         onClick={() => {
           setNum(num + 1);
         }}
@@ -13,6 +18,7 @@ const IncrementButton = () => {
         Clicked: {num}
       </button>
       <button
+        style={style}
         onClick={() => {
           setNum(0);
         }}
