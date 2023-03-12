@@ -4,12 +4,12 @@ import Card from "../components/Card.astro";
 import JCard from "../components/JCard";
 import IncrementButton from "../components/IncrementButton";
 
-import theme from "../styles/theme";
+import { space, fontSizes, fontWeights, screenSizes } from "../theme";
 
-const { space16, space24 } = theme.space;
-const { fontsize40 } = theme.fontSizes;
-const { bold } = theme.fontWeights;
-const { medium } = theme.screenSizes;
+const { space16, space24 } = space;
+const { fontsize40 } = fontSizes;
+const { bold } = fontWeights;
+const { medium } = screenSizes;
 ---
 
 <Layout title="Welcome to Astro my duder">
