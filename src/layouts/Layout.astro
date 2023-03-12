@@ -5,7 +5,6 @@ export interface Props {
 }
 
 const { title } = Astro.props;
-const { white, background } = colors;
 ---
 
 <!DOCTYPE html>
@@ -22,7 +21,10 @@ const { white, background } = colors;
   </body>
 </html>
 
-<style is:global define:vars={{ white, background }}>
+<style
+  is:global
+  define:vars={{ white: colors.white, background: colors.background }}
+>
   :root {
     --accent: 124, 58, 237;
     --accent-gradient: linear-gradient(
