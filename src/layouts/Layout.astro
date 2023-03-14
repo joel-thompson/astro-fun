@@ -1,10 +1,23 @@
 ---
-import { colors } from "../theme.js";
+import theme from "../theme.js";
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+// set up a theme object i can pass into the style
+const styles = {
+  ...theme.borderWidths,
+  ...theme.colors,
+  ...theme.fontSizes,
+  ...theme.fontWeights,
+  ...theme.lineHeights,
+  ...theme.radii,
+  ...theme.screenSizes,
+  ...theme.space,
+  ...theme.zIndices,
+};
 ---
 
 <!DOCTYPE html>
@@ -21,19 +34,7 @@ const { title } = Astro.props;
   </body>
 </html>
 
-<style
-  is:global
-  define:vars={{ white: colors.white, background: colors.background }}
->
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      var(--white) 60%
-    );
-  }
+<style is:global define:vars={styles}>
   html {
     font-family: system-ui, sans-serif;
     background-color: var(--background);

@@ -1,10 +1,11 @@
 import { useState } from "react";
+import theme from "../theme";
 
 const IncrementButton = () => {
   const [num, setNum] = useState(0);
 
   const style = {
-    color: "red",
+    color: theme.colors.black,
   };
 
   return (

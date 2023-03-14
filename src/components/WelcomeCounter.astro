@@ -1,0 +1,30 @@
+---
+import IncrementButton from "./IncrementButton";
+---
+
+<h1>Welcome to <span class="text-gradient">Astro</span> my guy</h1>
+<IncrementButton client:load />
+
+<style>
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      var(--white) 60%
+    );
+  }
+  h1 {
+    font-size: var(--fontsize40);
+    font-weight: var(--fontweightBold);
+    margin: 0;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>

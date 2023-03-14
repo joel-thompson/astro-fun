@@ -1,41 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import IncrementButton from "../components/IncrementButton";
-
-import { space, fontSizes, fontWeights, screenSizes } from "../theme";
+import WelcomeCounter from "../components/WelcomeCounter.astro";
 ---
 
 <Layout title="Welcome to Astro my duder">
   <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span> my guy</h1>
-    <IncrementButton client:load />
+    <WelcomeCounter />
   </main>
 </Layout>
 
-<style
-  define:vars={{
-    space16: space.space16,
-    space24: space.space24,
-    fontsize40: fontSizes.fontsize40,
-    bold: fontWeights.bold,
-    medium: screenSizes.medium,
-  }}
->
+<style>
   main {
     margin: auto;
     padding: var(--space24);
-    max-width: var(--medium);
-  }
-  h1 {
-    font-size: var(--fontsize40);
-    font-weight: var(--bold);
-    margin: 0;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
+    max-width: var(--screenMedium);
   }
 </style>
