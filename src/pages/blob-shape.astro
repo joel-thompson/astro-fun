@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Blob Playground">
+  <div>blob</div>
+</Layout>
+
+<style>
+  div {
+    background-color: red;
+    height: 200px;
+    width: 300px;
+    border-radius: 45% 55% 24% 76% / 30% 75% 25% 70%;
+    transition: border-radius 500ms ease-in-out;
+  }
+  div:hover {
+    border-radius: 73% 27% 40% 60% / 75% 65% 35% 25%;
+  }
+</style>
